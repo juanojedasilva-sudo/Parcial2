@@ -1,0 +1,115 @@
+@startuml Diagrama_Clases_SGMR
+' Diagrama de clases del SGMR - Parcial 2 FPOO (Universidad del Valle)
+' Autor: Juan Diego Ojeda Silva (cod. 2517089) - 14/07/2026
+' Coherente 1:1 con el codigo de Codigo/include y Codigo/src.
+skinparam classAttributeIconSize 0
+
+abstract class Recurso {
+    # nombre : std::string
+    + Recurso(nombre : const std::string&)
+    + {abstract} ejecutarAccion() : void {const}
+    + mostrarInfo() : void {const, virtual}
+    + getNombre() : const std::string& {const}
+    + ~Recurso() {virtual}
+}
+
+abstract class Vehiculo {
+    # placa : std::string
+    # capacidad : int
+    + Vehiculo(nombre : const std::string&, placa : const std::string&, capacidad : int)
+    + mostrarInfo() : void {const, override}
+    + ~Vehiculo() {virtual}
+}
+
+abstract class Personal {
+    # especialidad : std::string
+    + Personal(nombre : const std::string&, especialidad : const std::string&)
+    + mostrarInfo() : void {const, override}
+    + ~Personal() {virtual}
+}
+
+class Ambulancia {
+    + Ambulancia(nombre : const std::string&, placa : const std::string&, capacidad : int)
+    + ejecutarAccion() : void {const, override}
+    + mostrarInfo() : void {const, override}
+    + ~Ambulancia()
+}
+
+class Helicoptero {
+    + Helicoptero(nombre : const std::string&, placa : const std::string&, capacidad : int)
+    + ejecutarAccion() : void {const, override}
+    + mostrarInfo() : void {const, override}
+    + ~Helicoptero()
+}
+
+class Medico {
+    + Medico(nombre : const std::string&, especialidad : const std::string&)
+    + ejecutarAccion() : void {const, override}
+    + mostrarInfo() : void {const, override}
+    + ~Medico()
+}
+
+class Rescatista {
+    + Rescatista(nombre : const std::string&, especialidad : const std::string&)
+    + ejecutarAccion() : void {const, override}
+    + mostrarInfo() : void {const, override}
+    + ~Rescatista()
+}
+
+class Mision {
+    - id : int
+    - descripcion : std::string
+    - zona : std::string
+    - recursosAsignados : Recurso**
+    - cantidadRecursos : int
+    - capacidadRecursos : int
+    - redimensionar() : void
+    + Mision(id : int, descripcion : const std::string&, zona : const std::string&)
+    + ~Mision()
+    + asignarRecurso(recurso : Recurso*) : void
+    + tieneRecurso(recurso : const Recurso*) : bool {const}
+    + ejecutar() : void {const}
+    + mostrarInfo() : void {const}
+    + getDescripcion() : const std::string& {const}
+}
+
+class Controlador {
+    - listaRecursos : Recurso**
+    - cantidadRecursos : int
+    - capacidadRecursos : int
+    - listaMisiones : Mision**
+    - cantidadMisiones : int
+    - capacidadMisiones : int
+    - verRecursos() : void {const}
+    - registrarRecurso() : void
+    - crearMision() : void
+    - asignarRecursoAMision() : void
+    - ejecutarMision() : void
+    - mostrarMenu() : void {const}
+    - mostrarMisiones() : void {const}
+    - agregarRecurso(recurso : Recurso*) : void
+    - agregarMision(mision : Mision*) : void
+    - cargarDatosPrueba() : void
+    - leerEnteroEnRango(mensaje : const std::string&, minimo : int, maximo : int, valorLeido : int&) : bool
+    - leerTexto(mensaje : const std::string&, destino : std::string&) : bool
+    + Controlador()
+    + ~Controlador()
+    + iniciar() : void
+}
+
+' ---- Herencia ----
+Recurso <|-- Vehiculo
+Recurso <|-- Personal
+Vehiculo <|-- Ambulancia
+Vehiculo <|-- Helicoptero
+Personal <|-- Medico
+Personal <|-- Rescatista
+
+' ---- Composicion: el Controlador crea y destruye recursos y misiones ----
+Controlador "1" *-- "0..*" Recurso : gestiona >
+Controlador "1" *-- "0..*" Mision : administra >
+
+' ---- Agregacion: la Mision referencia recursos sin ser su duenia ----
+Mision "0..*" o-- "0..*" Recurso : agrega >
+
+@enduml
