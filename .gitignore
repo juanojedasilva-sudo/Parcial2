@@ -1,0 +1,4 @@
+# Binarios de compilacion
+*.exe
+*.o
+*.obj
