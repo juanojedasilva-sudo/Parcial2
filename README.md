@@ -119,12 +119,10 @@ asignación desde cero.
 
 ## Diagrama de clases (UML)
 
-![Diagrama de clases del SGMR](diagrama/Diagrama_Clases_SGMR.png)
-
 Fuente editable: [`diagrama/Diagrama_Clases_SGMR.puml`](diagrama/Diagrama_Clases_SGMR.puml)
-(renderizable en plantuml.com). Vista rápida en Mermaid — resumen con tipos
-abreviados (`string` ≡ `const std::string&`) y sin constructores/destructores;
-la versión completa y 1:1 con el código es el `.puml` y el PNG de arriba:
+(renderizable en plantuml.com). A continuación, el diagrama en Mermaid — resumen
+con tipos abreviados (`string` ≡ `const std::string&`) y sin
+constructores/destructores; la versión completa y 1:1 con el código es el `.puml`:
 
 ```mermaid
 classDiagram
