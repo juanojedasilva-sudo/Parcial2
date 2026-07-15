@@ -328,11 +328,12 @@ bool Controlador::leerTexto(const std::string& mensaje, std::string& destino) {
             std::cout << "\n(La entrada se cerró; saliendo del programa)" << std::endl;
             return false;
         }
-        // Elimina el retorno de carro final si la entrada viene de un archivo CRLF.
-        if (!destino.empty() && destino[destino.size() - 1] == '\r') {
-            destino.erase(destino.size() - 1);
-        }
-        if (!destino.empty()) {
+        // Recorta espacios, tabulaciones y el retorno de carro final (CRLF),
+        // igual que leerEnteroEnRango: un texto de solo espacios NO es valido.
+        size_t inicio = destino.find_first_not_of(" \t\r");
+        size_t fin = destino.find_last_not_of(" \t\r");
+        if (inicio != std::string::npos) {
+            destino = destino.substr(inicio, fin - inicio + 1);
             return true;
         }
         std::cout << "El texto no puede estar vacío." << std::endl;

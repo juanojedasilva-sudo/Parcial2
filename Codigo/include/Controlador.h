@@ -58,6 +58,12 @@ public:
     Controlador();
     ~Controlador();   // HT02: libera recursos, misiones y ambos arreglos
 
+    // No copiable: el Controlador es el unico dueno de la memoria del
+    // sistema; copiarlo duplicaria los punteros y causaria doble delete
+    // (HT02). Tambien fuerza el paso por referencia o puntero (HT03).
+    Controlador(const Controlador&) = delete;
+    Controlador& operator=(const Controlador&) = delete;
+
     void iniciar();   // despliega el ciclo del menu principal (HU04)
 };
 

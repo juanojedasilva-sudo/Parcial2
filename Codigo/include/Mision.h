@@ -38,6 +38,12 @@ public:
     Mision(int id, const std::string& descripcion, const std::string& zona);
     ~Mision();   // libera SOLO el arreglo de punteros (HT02)
 
+    // No copiable: una copia superficial duplicaria el puntero al arreglo y
+    // provocaria doble delete (HT02); ademas obliga a pasar toda Mision por
+    // referencia o puntero (HT03). El compilador rechaza cualquier copia.
+    Mision(const Mision&) = delete;
+    Mision& operator=(const Mision&) = delete;
+
     void asignarRecurso(Recurso* recurso);              // HU02
     bool tieneRecurso(const Recurso* recurso) const;
     void ejecutar() const;                              // HU03: recorrido polimorfico

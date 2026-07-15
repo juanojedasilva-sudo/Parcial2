@@ -97,6 +97,17 @@ class Controlador {
     + iniciar() : void
 }
 
+note bottom of Mision
+  No copiable: constructor de copia y operator=
+  eliminados (= delete) para evitar el doble
+  delete del arreglo (HT02) y la copia en pila (HT03).
+end note
+
+note bottom of Controlador
+  No copiable (= delete): unico dueno de toda
+  la memoria dinamica del sistema (HT02, HT03).
+end note
+
 ' ---- Herencia ----
 Recurso <|-- Vehiculo
 Recurso <|-- Personal

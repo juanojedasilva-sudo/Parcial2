@@ -122,7 +122,9 @@ asignación desde cero.
 ![Diagrama de clases del SGMR](diagrama/Diagrama_Clases_SGMR.png)
 
 Fuente editable: [`diagrama/Diagrama_Clases_SGMR.puml`](diagrama/Diagrama_Clases_SGMR.puml)
-(renderizable en plantuml.com). Vista rápida (Mermaid):
+(renderizable en plantuml.com). Vista rápida en Mermaid — resumen con tipos
+abreviados (`string` ≡ `const std::string&`) y sin constructores/destructores;
+la versión completa y 1:1 con el código es el `.puml` y el PNG de arriba:
 
 ```mermaid
 classDiagram
@@ -168,9 +170,10 @@ classDiagram
         -cantidadRecursos : int
         -capacidadRecursos : int
         +asignarRecurso(Recurso*) void
-        +tieneRecurso(Recurso*) bool
+        +tieneRecurso(const Recurso*) bool
         +ejecutar() void
         +mostrarInfo() void
+        +getDescripcion() string
         -redimensionar() void
     }
     class Controlador {
@@ -181,7 +184,18 @@ classDiagram
         -cantidadMisiones : int
         -capacidadMisiones : int
         +iniciar() void
+        -verRecursos() void
+        -registrarRecurso() void
+        -crearMision() void
+        -asignarRecursoAMision() void
+        -ejecutarMision() void
+        -mostrarMenu() void
+        -mostrarMisiones() void
+        -agregarRecurso(Recurso*) void
+        -agregarMision(Mision*) void
         -cargarDatosPrueba() void
+        -leerEnteroEnRango(string, int, int, int) bool
+        -leerTexto(string, string) bool
     }
     Recurso <|-- Vehiculo
     Recurso <|-- Personal
@@ -196,6 +210,10 @@ classDiagram
 
 ## Notas de implementación
 
+- `Mision` y `Controlador` son **no copiables** (constructor de copia y
+  `operator=` marcados `= delete`): administran arreglos crudos y una copia
+  superficial provocaría doble `delete`; además el compilador pasa a rechazar
+  cualquier copia en pila de estos objetos (refuerzo de HT03).
 - Se usa `std::string` para textos: la prohibición de HT01 aplica a las
   **colecciones de alto nivel** (`std::vector`, `std::list`, etc.), que aquí
   se sustituyen íntegramente por arreglos manuales de punteros; `std::string`
