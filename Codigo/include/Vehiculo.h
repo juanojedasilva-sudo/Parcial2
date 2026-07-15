@@ -7,6 +7,7 @@
  *     (placa y capacidad de personas) y extender la presentacion de la info.
  *   Colaboradores: Recurso (clase base); Ambulancia y Helicoptero (derivadas).
  * @author Juan Diego Ojeda Silva (cod. 2517089)
+ * @mail juan.ojeda.silva@correounivalle.edu.co
  * @date 14/07/2026
  * @version 1.0
  * Curso: Fundamentos de Programacion Orientada a Objetos - Grupo 80, Universidad del Valle.

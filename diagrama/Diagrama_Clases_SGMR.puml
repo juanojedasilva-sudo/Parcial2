@@ -1,6 +1,7 @@
 @startuml Diagrama_Clases_SGMR
 ' Diagrama de clases del SGMR - Parcial 2 FPOO (Universidad del Valle)
 ' Autor: Juan Diego Ojeda Silva (cod. 2517089) - 14/07/2026
+' Correo: juan.ojeda.silva@correounivalle.edu.co
 ' Coherente 1:1 con el codigo de Codigo/include y Codigo/src.
 skinparam classAttributeIconSize 0
 

@@ -2,6 +2,7 @@
  * @file Personal.cpp
  * @brief Implementacion de la clase intermedia Personal.
  * @author Juan Diego Ojeda Silva (cod. 2517089)
+ * @mail juan.ojeda.silva@correounivalle.edu.co
  * @date 14/07/2026
  * @version 1.0
  */

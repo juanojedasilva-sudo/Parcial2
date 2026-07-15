@@ -1,7 +1,7 @@
 # Parcial 2 — Sistema de Gestión de Misiones de Rescate (SGMR)
 
 **Curso:** Fundamentos de Programación Orientada a Objetos — Grupo 80, Universidad del Valle
-**Estudiante:** Juan Diego Ojeda Silva — código 2517089 (entrega individual)
+**Estudiante:** Juan Diego Ojeda Silva — código 2517089 — juan.ojeda.silva@correounivalle.edu.co (entrega individual)
 **Fecha:** 14 de julio de 2026
 
 Motor lógico en C++ para el registro centralizado de recursos de rescate

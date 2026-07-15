@@ -2,6 +2,7 @@
  * @file test_memoria.cpp
  * @brief Test de HT02: comprueba cero fugas de memoria contando new/delete.
  * @author Juan Diego Ojeda Silva (cod. 2517089)
+ * @mail juan.ojeda.silva@correounivalle.edu.co
  * @date 14/07/2026
  * @version 1.0
  */

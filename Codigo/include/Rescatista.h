@@ -7,6 +7,7 @@
  *     concreto ("Buscando sobrevivientes en escombros").
  *   Colaboradores: Personal (clase base); instanciado por el Controlador.
  * @author Juan Diego Ojeda Silva (cod. 2517089)
+ * @mail juan.ojeda.silva@correounivalle.edu.co
  * @date 14/07/2026
  * @version 1.0
  * Curso: Fundamentos de Programacion Orientada a Objetos - Grupo 80, Universidad del Valle.

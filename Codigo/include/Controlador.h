@@ -9,6 +9,7 @@
  *     dinamica del sistema (composicion, HT01/HT02).
  *   Colaboradores: Recurso y sus derivadas, Mision; main.cpp solo lo instancia.
  * @author Juan Diego Ojeda Silva (cod. 2517089)
+ * @mail juan.ojeda.silva@correounivalle.edu.co
  * @date 14/07/2026
  * @version 1.0
  * Curso: Fundamentos de Programacion Orientada a Objetos - Grupo 80, Universidad del Valle.

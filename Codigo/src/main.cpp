@@ -2,6 +2,7 @@
  * @file main.cpp
  * @brief Punto de entrada del SGMR: solo instancia el Controlador (HU04).
  * @author Juan Diego Ojeda Silva (cod. 2517089)
+ * @mail juan.ojeda.silva@correounivalle.edu.co
  * @date 14/07/2026
  * @version 1.0
  */
